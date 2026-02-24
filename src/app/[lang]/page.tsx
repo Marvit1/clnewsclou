@@ -1,5 +1,4 @@
 "use client";
-export const runtime = 'edge';
 import { useEffect, useMemo, useRef, useState } from "react";
 import HeroCarousel from "@/components/HeroCarousel";
 import AdBanner from "@/components/AdBanner";

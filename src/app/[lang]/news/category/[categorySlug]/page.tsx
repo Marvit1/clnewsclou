@@ -1,5 +1,4 @@
 "use client";
-export const runtime = 'edge';
 
 import { useState, useMemo } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
