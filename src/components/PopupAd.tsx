@@ -28,8 +28,11 @@ export default function PopupAd() {
       .then((data) => {
         if (!mounted) return;
         if (data) {
-          setAd(data);
-          setIsVisible(true);
+          const adData = Array.isArray(data) ? data[0] : data;
+          if (adData) {
+            setAd(adData);
+            setIsVisible(true);
+          }
         }
       })
       .catch(() => {

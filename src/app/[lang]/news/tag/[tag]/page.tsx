@@ -17,7 +17,9 @@ const TagNews = () => {
     const decodedTag = typeof tag === 'string' ? decodeURIComponent(tag) : '';
 
     const filteredNews = articles ? articles.filter(
-        (item: NewsItem) => item.tag.toLowerCase() === decodedTag.toLowerCase()
+        (item: NewsItem) => Object.values(item.tag).some(
+            val => val.toLowerCase() === decodedTag.toLowerCase()
+        )
     ) : [];
 
     if (isLoading) {
