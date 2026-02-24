@@ -1,7 +1,6 @@
-name = "frontnews"
-compatibility_date = "2024-04-03"
-compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".next"
+name = "clnewsclou"
+compatibility_date = "2025-02-01"
+pages_build_output_dir = ".open-next"
 
 [env.production.vars]
 NEXT_PUBLIC_API_URL = "https://api.datapols.com/api"
