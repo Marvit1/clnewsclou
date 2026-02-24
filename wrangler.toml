@@ -1,6 +1,7 @@
 name = "clnewsclou"
 compatibility_date = "2025-02-01"
 pages_build_output_dir = ".open-next"
+compatibility_flags = ["nodejs_compat"]
 
 [env.production.vars]
 NEXT_PUBLIC_API_URL = "https://api.datapols.com/api"
