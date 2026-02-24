@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "deploy": "opennextjs-cloudflare build && cp .open-next/worker.js .open-next/_worker.js && cp -r .open-next/assets/. .open-next/ && rm -rf .open-next/assets",
+    "deploy": "opennextjs-cloudflare build && cp .open-next/worker.js .open-next/_worker.js && cp -r .open-next/assets/. .open-next/ && echo '{\"version\":1,\"include\":[\"/*\"],\"exclude\":[\"/_next/static/*\", \"/favicon.ico\", \"/robots.txt\", \"/sitemap.xml\", \"/*.svg\", \"/*.jpg\", \"/*.png\"]}' > .open-next/_routes.json",
     "start": "next start",
     "lint": "eslint"
   },
