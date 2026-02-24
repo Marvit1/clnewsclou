@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import "../globals.css";
 import { Metadata } from "next";
 import ClientLayout from "@/components/ClientLayout";

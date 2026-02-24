@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { fetchArticleBySlug } from "@/lib/api";
 import { Metadata, ResolvingMetadata } from "next";
 import NewsDetailClient from "./NewsDetailClient";

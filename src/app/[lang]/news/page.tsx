@@ -1,4 +1,5 @@
 "use client";
+export const runtime = 'edge';
 
 import { useState, useMemo } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -64,7 +65,7 @@ const AllNews = () => {
 
   return (
     <div className={styles.container}>
-      
+
 
       {/* Tags */}
       <div className={styles.tagsContainer}>
