@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 140px);
+  background-color: hsl(var(--background));
+  padding: 20px;
+}
+
+.content {
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+}
+
+.message {
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: hsl(var(--muted-foreground));
+}
+
+.link {
+  font-family: var(--font-body);
+  color: hsl(var(--accent));
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.link:hover {
+  color: hsl(var(--accent) / 0.8);
+}

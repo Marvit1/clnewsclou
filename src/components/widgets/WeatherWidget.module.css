@@ -1,0 +1,108 @@
+.container {
+  border-radius: 8px;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--card));
+  padding: 16px;
+}
+
+.header {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: hsl(var(--card-foreground));
+}
+
+.citySelector {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 4px;
+}
+
+.cityButton {
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cityButtonActive {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.cityButtonInactive {
+  background-color: transparent;
+  color: hsl(var(--muted-foreground));
+}
+
+.cityButtonInactive:hover {
+  color: hsl(var(--foreground));
+}
+
+.weatherDisplay {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.weatherIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.temperature {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: hsl(var(--card-foreground));
+  line-height: 1;
+}
+
+.condition {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: hsl(var(--muted-foreground));
+  text-transform: capitalize;
+  margin-top: 2px;
+}
+
+.statsGrid {
+  margin-top: 12px;
+  border-top: 1px solid hsl(var(--border));
+  padding-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(var(--card-foreground));
+}

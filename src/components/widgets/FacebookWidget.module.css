@@ -1,0 +1,34 @@
+.container {
+  border-radius: 8px;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--card));
+  padding: 16px;
+  margin-bottom: 30px;
+}
+
+.header {
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: hsl(var(--card-foreground));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+  color: #1877f2;
+}
+
+.iframeWrapper {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.iframe {
+  border: none;
+  display: block;
+}

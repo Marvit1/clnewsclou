@@ -1,0 +1,150 @@
+.mainWrapper {
+    background-color: hsl(var(--background));
+    min-height: 100vh;
+}
+
+.breadcrumbBar {
+    border-bottom: 1px solid hsl(var(--border));
+    background-color: hsl(var(--card));
+    padding: 12px 0;
+}
+
+.breadcrumbContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: hsl(var(--muted-foreground));
+    flex-wrap: wrap;
+}
+
+.breadcrumbLink {
+    color: hsl(var(--muted-foreground));
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.breadcrumbLink:hover {
+    color: hsl(var(--accent));
+}
+
+.breadcrumbSeparator {
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+.breadcrumbCurrent {
+    color: hsl(var(--foreground));
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 300px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 1024px) {
+    .layout {
+        grid-template-columns: 1fr 350px;
+    }
+}
+
+.main {
+    min-width: 0;
+}
+
+.loadingBox {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.notFound {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.notFound h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.notFound p {
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 20px;
+}
+
+.backButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid hsl(var(--border));
+    background: transparent;
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 24px;
+    transition: all 0.2s;
+}
+
+.backButton:hover {
+    background: hsl(var(--card));
+    border-color: hsl(var(--accent));
+    color: hsl(var(--accent));
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: hsl(var(--foreground));
+    margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 36px;
+    }
+}
+
+.videoWrapper {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid hsl(var(--border));
+    background: black;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.videoPlayer {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 70vh;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}

@@ -1,0 +1,155 @@
+.container {
+  border-radius: 8px;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--card));
+  padding: 16px;
+}
+
+.header {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: hsl(var(--card-foreground));
+}
+
+.converterSpace {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  flex: 1;
+  border-radius: 6px;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--background));
+  padding: 6px 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: hsl(var(--foreground));
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: hsl(var(--accent));
+  box-shadow: 0 0 0 1px hsl(var(--accent));
+}
+
+.select {
+  border-radius: 6px;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--background));
+  padding: 6px 8px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.select:focus {
+  outline: none;
+  border-color: hsl(var(--accent));
+}
+
+.swapButton {
+  display: flex;
+  justify-content: center;
+}
+
+.swapBtn {
+  border-radius: 50%;
+  border: 1px solid hsl(var(--border));
+  background-color: transparent;
+  padding: 6px;
+  color: hsl(var(--muted-foreground));
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swapBtn:hover {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--foreground));
+}
+
+.outputRow {
+  display: flex;
+  gap: 8px;
+}
+
+.outputBox {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  border-radius: 6px;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--muted));
+  padding: 6px 8px;
+}
+
+.outputValue {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.rateTable {
+  margin-top: 12px;
+  border-top: 1px solid hsl(var(--border));
+  padding-top: 12px;
+}
+
+.rateList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rateRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+
+.rateCode {
+  font-weight: 600;
+  color: hsl(var(--card-foreground));
+}
+
+.rateValue {
+  color: hsl(var(--muted-foreground));
+}
+
+.rateChange {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.positive {
+  color: #10b981;
+}
+
+.negative {
+  color: #ef4444;
+}

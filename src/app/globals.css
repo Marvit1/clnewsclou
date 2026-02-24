@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: 210 20% 98%;
+  --foreground: 220 15% 20%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 15% 20%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 15% 20%;
+  --primary: 220 15% 25%;
+  --primary-foreground: 210 20% 98%;
+  --secondary: 215 20% 93%;
+  --secondary-foreground: 220 25% 10%;
+  --muted: 215 18% 94%;
+  --muted-foreground: 215 14% 46%;
+  --accent: 220 30% 18%;
+  --accent-foreground: 210 20% 98%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 214 20% 88%;
+  --input: 214 20% 88%;
+  --ring: 220 30% 18%;
+  --radius: 0.375rem;
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+  --font-display: 'Exo 2', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --news-highlight: 35 92% 50%;
+  --news-breaking: 0 72% 51%;
+  --news-tag: 215 20% 93%;
+  --news-tag-foreground: 220 25% 30%;
+  --news-overlay: 220 30% 8%;
+  --news-surface: 210 18% 96%;
+}
+
+.dark {
+  --background: 222 25% 8%;
+  --foreground: 210 20% 92%;
+  --card: 222 22% 12%;
+  --card-foreground: 210 20% 92%;
+  --popover: 222 22% 12%;
+  --popover-foreground: 210 20% 92%;
+  --primary: 210 20% 92%;
+  --primary-foreground: 222 25% 8%;
+  --secondary: 220 18% 18%;
+  --secondary-foreground: 210 20% 92%;
+  --muted: 220 16% 18%;
+  --muted-foreground: 215 14% 58%;
+  --accent: 35 92% 55%;
+  --accent-foreground: 222 25% 8%;
+  --destructive: 0 62% 45%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 220 16% 22%;
+  --input: 220 16% 22%;
+  --ring: 210 20% 92%;
+  --news-highlight: 35 92% 55%;
+  --news-breaking: 0 62% 55%;
+  --news-tag: 220 18% 20%;
+  --news-tag-foreground: 210 18% 75%;
+  --news-surface: 222 22% 11%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
