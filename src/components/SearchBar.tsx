@@ -70,15 +70,28 @@ const SearchBar = () => {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    const handleSearchClick = () => {
+        setIsFocused(true);
+        setTimeout(() => {
+            inputRef.current?.focus();
+        }, 0);
+    };
+
     return (
         <div className={styles.searchWrapper} ref={searchRef}>
-            <div className={`${styles.searchBox} ${isFocused ? styles.focused : ""}`}>
+            <div
+                className={`${styles.searchBox} ${isFocused ? styles.focused : ""}`}
+                onClick={handleSearchClick}
+            >
                 {isLoading ? (
                     <Loader2 size={18} className={`${styles.searchIcon} animate-spin`} />
                 ) : (
                     <Search size={18} className={styles.searchIcon} />
                 )}
                 <input
+                    ref={inputRef}
                     type="text"
                     placeholder={t("search.placeholder")}
                     value={query}

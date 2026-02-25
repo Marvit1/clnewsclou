@@ -9,7 +9,7 @@
     align-items: center;
     background-color: hsl(var(--muted) / 0.5);
     border: 1px solid hsl(var(--border));
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 0 12px;
     height: 38px;
     width: 200px;
@@ -51,7 +51,7 @@
     width: 380px;
     background-color: hsl(var(--card));
     border: 1px solid hsl(var(--border));
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     z-index: 100;
@@ -65,6 +65,7 @@
         border-radius: 50%;
         background-color: transparent;
         border-color: transparent;
+        cursor: pointer;
     }
 
     .searchBox:hover {
@@ -83,7 +84,7 @@
         position: absolute;
         right: 0;
         width: 220px;
-        border-radius: 20px;
+        border-radius: 8px;
         padding: 0 12px;
         background-color: hsl(var(--background));
         border-color: hsl(var(--accent));
