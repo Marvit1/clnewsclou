@@ -15,7 +15,7 @@ const translations: Translations = {
   "nav.economy": { en: "Economy", hy: "Տնտեսություն", ru: "Экономика" },
   "nav.world": { en: "World", hy: "Աշխարհ", ru: "Мир" },
   "nav.sports": { en: "Sports", hy: "Սպորտ", ru: "Спорт" },
-  "nav.culture": { en: "News", hy: "Լուրեր", ru: "" },
+  "nav.culture": { en: "News", hy: "Լուրեր", ru: "Новости" },
   "nav.law": { en: "Law", hy: "Իրավունք", ru: "Право" },
   "hero.breaking": { en: "Breaking News", hy: "Հրատապ", ru: "Срочные новости" },
   "category.sports": { en: "Sports", hy: "Սպորտ", ru: "Спорт" },
