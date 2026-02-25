@@ -109,11 +109,20 @@ export const fetchArticleBySlug = async (slug: string) => {
     if (!response.ok) {
         const explicitCategories = ['economy', 'sports', 'culture', 'politics', 'world', 'law'];
         for (const cat of explicitCategories) {
-            const catResponse = await fetch(`${API_BASE_URL}/articles/${cat}/${encodeURIComponent(slug)}/`);
-            if (catResponse.ok) {
-                response = catResponse;
-                break;
+            // Try both: /articles/[cat]/[slug]/ and /articles/category/[cat]/[slug]/
+            const paths = [
+                `${API_BASE_URL}/articles/${cat}/${encodeURIComponent(slug)}/`,
+                `${API_BASE_URL}/articles/category/${cat}/${encodeURIComponent(slug)}/`
+            ];
+
+            for (const path of paths) {
+                const catResponse = await fetch(path);
+                if (catResponse.ok) {
+                    response = catResponse;
+                    break;
+                }
             }
+            if (response.ok) break;
         }
     }
 
