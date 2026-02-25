@@ -59,12 +59,33 @@
 }
 
 .logoLight {
-  transform: translateX(0);
+  transform: scale(1.1) translateX(-10px);
   transform-origin: left center;
 }
 
 .logoDark {
-  transform: translateX(0);
+  transform: scale(1.0) translateX(0);
+}
+
+@media (max-width: 767px) {
+  .logoImage.logoLight {
+    height: 60px !important;
+    width: auto !important;
+    min-width: 160px !important;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 480px) {
+  .logoLight {
+    transform: scale(1.4) translateX(-20px);
+  }
+}
+
+@media (min-width: 768px) {
+  .logoLight {
+    transform: scale(2.0) translateX(-40px);
+  }
 }
 
 .desktopNav {
