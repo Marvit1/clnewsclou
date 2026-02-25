@@ -59,12 +59,13 @@
 }
 
 .logoImage.logoLight {
-  height: 60px;
-  width: 200px;
+  height: 75px !important;
+  width: auto !important;
+  min-width: 180px !important;
 }
 
 .logoLight {
-  transform: translateX(10px);
+  transform: translateX(0);
   transform-origin: left center;
 }
 

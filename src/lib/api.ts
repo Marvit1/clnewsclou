@@ -102,33 +102,41 @@ export const fetchFeaturedArticles = async () => {
 };
 
 export const fetchArticleBySlug = async (slug: string) => {
-    // 1. Try generic endpoint
-    let response = await fetch(`${API_BASE_URL}/articles/${encodeURIComponent(slug)}/`);
+    const slugEncoded = encodeURIComponent(slug);
+    const categories = ['law', 'sports', 'culture', 'politics', 'economy', 'world'];
 
-    // 2. If not found, try explicit category endpoints (common in this API structure)
-    if (!response.ok) {
-        const explicitCategories = ['economy', 'sports', 'culture', 'politics', 'world', 'law'];
-        for (const cat of explicitCategories) {
-            // Try both: /articles/[cat]/[slug]/ and /articles/category/[cat]/[slug]/
-            const paths = [
-                `${API_BASE_URL}/articles/${cat}/${encodeURIComponent(slug)}/`,
-                `${API_BASE_URL}/articles/category/${cat}/${encodeURIComponent(slug)}/`
-            ];
+    // Build priority list of URLs to try
+    const potentialUrls: string[] = [];
 
-            for (const path of paths) {
-                const catResponse = await fetch(path);
-                if (catResponse.ok) {
-                    response = catResponse;
-                    break;
-                }
+    // 1. Try category-specific paths first (priority)
+    categories.forEach(cat => {
+        potentialUrls.push(`${API_BASE_URL}/articles/${cat}/${slugEncoded}/`);
+        potentialUrls.push(`${API_BASE_URL}/articles/${cat}/${slugEncoded}`);
+    });
+
+    // 2. Try generic articles path
+    potentialUrls.push(`${API_BASE_URL}/articles/${slugEncoded}/`);
+    potentialUrls.push(`${API_BASE_URL}/articles/${slugEncoded}`);
+
+    // 3. Try /category/ prefix paths
+    categories.forEach(cat => {
+        potentialUrls.push(`${API_BASE_URL}/articles/category/${cat}/${slugEncoded}/`);
+        potentialUrls.push(`${API_BASE_URL}/articles/category/${cat}/${slugEncoded}`);
+    });
+
+    for (const url of potentialUrls) {
+        try {
+            const response = await fetch(url);
+            if (response.ok) {
+                const data = await response.json();
+                return mapToNewsItem(data);
             }
-            if (response.ok) break;
+        } catch (e) {
+            // silent catch
         }
     }
 
-    if (!response.ok) throw new Error("Failed to fetch article");
-    const data = await response.json();
-    return mapToNewsItem(data);
+    throw new Error(`Failed to fetch article: ${slug}`);
 };
 
 export const fetchArticlesByTag = async (tag: string) => {
