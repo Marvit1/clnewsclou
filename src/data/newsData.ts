@@ -19,6 +19,7 @@ export interface NewsItem {
   videoUrl?: string;
   telegramEmbed?: string;
   facebookEmbed?: string;
+  publishedAt?: string;
   relatedArticles?: NewsItem[];
 }
 

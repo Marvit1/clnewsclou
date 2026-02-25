@@ -56,7 +56,7 @@ export const mapToNewsItem = (article: NewsArticleResponse): NewsItem => ({
         ru: "Новости"
     },
     mediaType: article.media_type,
-    imageUrl: article.image_url || "/placeholder.svg",
+    imageUrl: article.image_url ? (article.image_url.startsWith('http') ? article.image_url : `${API_BASE_URL.replace('/api', '')}${article.image_url}`) : "/placeholder.svg",
     image2: article.image2,
     image3: article.image3,
     image4: article.image4,
@@ -64,6 +64,7 @@ export const mapToNewsItem = (article: NewsArticleResponse): NewsItem => ({
     videoUrl: article.video_url,
     telegramEmbed: article.telegram_embed,
     facebookEmbed: article.facebook_embed,
+    publishedAt: article.published_at,
     date: article.published_at
         ? new Date(article.published_at).toLocaleString([], {
             year: 'numeric',
@@ -101,7 +102,21 @@ export const fetchFeaturedArticles = async () => {
 };
 
 export const fetchArticleBySlug = async (slug: string) => {
-    const response = await fetch(`${API_BASE_URL}/articles/${slug}/`);
+    // 1. Try generic endpoint
+    let response = await fetch(`${API_BASE_URL}/articles/${encodeURIComponent(slug)}/`);
+
+    // 2. If not found, try explicit category endpoints (common in this API structure)
+    if (!response.ok) {
+        const explicitCategories = ['economy', 'sports', 'culture', 'politics', 'world', 'law'];
+        for (const cat of explicitCategories) {
+            const catResponse = await fetch(`${API_BASE_URL}/articles/${cat}/${encodeURIComponent(slug)}/`);
+            if (catResponse.ok) {
+                response = catResponse;
+                break;
+            }
+        }
+    }
+
     if (!response.ok) throw new Error("Failed to fetch article");
     const data = await response.json();
     return mapToNewsItem(data);

@@ -128,7 +128,9 @@ const NewsDetailClient = ({ initialItem, lang }: NewsDetailClientProps) => {
                     <ArrowRight size={12} className={styles.breadcrumbSeparator} />
                     <Link href={`/${language}/news`} className={styles.breadcrumbLink}>{t("nav.allNews")}</Link>
                     <ArrowRight size={12} className={styles.breadcrumbSeparator} />
-                    <span className={styles.breadcrumbCurrent}>{currentTag}</span>
+                    <Link href={`/${language}/news/category/${item.category}`} className={styles.breadcrumbLink}>
+                        <span className={styles.breadcrumbCurrent}>{currentTag}</span>
+                    </Link>
                 </div>
             </div>
 

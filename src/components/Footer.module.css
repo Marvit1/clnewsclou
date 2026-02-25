@@ -71,9 +71,11 @@
   .sectionTitle,
   .aboutText,
   .infoList,
-  .linksList {
+  .linksList,
+  .socialContainer {
     text-align: center;
     align-items: center;
+    justify-content: center;
   }
 
   .infoItem {
@@ -127,6 +129,15 @@
 
 .socialContainer {
   margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .socialContainer {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .bottomBar {

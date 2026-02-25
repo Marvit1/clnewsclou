@@ -11,6 +11,12 @@
   gap: 12px;
 }
 
+@media (max-width: 480px) {
+  .vertical {
+    align-items: center;
+  }
+}
+
 .link {
   display: flex;
   align-items: center;

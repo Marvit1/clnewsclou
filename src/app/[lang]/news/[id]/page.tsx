@@ -25,13 +25,19 @@ export async function generateMetadata(
         const title = article.title[lang as keyof typeof article.title] || article.title["hy"];
         const description = article.excerpt[lang as keyof typeof article.excerpt] || article.excerpt["hy"];
         const image = article.imageUrl;
+        const url = `https://datapols.com/${lang}/news/${id}`;
 
         return {
             title: title,
             description: description,
+            alternates: {
+                canonical: url,
+            },
             openGraph: {
                 title: title,
                 description: description,
+                url: url,
+                siteName: "Data Politic",
                 images: [
                     {
                         url: image,
@@ -40,9 +46,10 @@ export async function generateMetadata(
                         alt: title,
                     },
                 ],
+                locale: lang === "ru" ? "ru_RU" : lang === "en" ? "en_US" : "hy_AM",
                 type: "article",
-                publishedTime: article.date,
-                authors: [article.author],
+                publishedTime: article.publishedAt,
+                authors: [article.author].filter(Boolean) as string[],
             },
             twitter: {
                 card: "summary_large_image",
@@ -54,7 +61,7 @@ export async function generateMetadata(
     } catch (error) {
         console.error("Error fetching article for metadata:", error);
         return {
-            title: "Data Politics",
+            title: "Data Politic",
         };
     }
 }

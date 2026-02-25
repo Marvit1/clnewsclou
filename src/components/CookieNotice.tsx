@@ -55,9 +55,7 @@ export default function CookieNotice() {
         }}
       >
         <div style={{ color: "hsl(var(--foreground))", fontSize: 14, lineHeight: 1.35 }}>
-          Այս կայքը օգտագործում է cookie-ներ՝ լեզվի ընտրությունը պահպանելու համար ({" "}
-          <code style={{ fontSize: 12 }}>django_language</code>) և որոշ ինտերֆեյսի կարգավորումներ պահպանելու համար ({" "}
-          <code style={{ fontSize: 12 }}>sidebar:state</code>)։ Շարունակելով՝ դուք համաձայնում եք դրանց օգտագործմանը։
+          Այս կայքը օգտագործում է cookie-ներ՝ լեզվի ընտրությունը և ինտերֆեյսի կարգավորումները պահպանելու համար։ Շարունակելով՝ դուք համաձայնում եք դրանց օգտագործմանը։
         </div>
 
         <div style={{ display: "flex", gap: 8 }}>
